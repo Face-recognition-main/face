@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  max-http-header-size: 1048576
+spring:
+  jackson:
+    time-zone: GMT+8
+  jpa:
+    generate-ddl: true
+    database: mysql
+    show-sql: true
+    open-in-view: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/face_warehouse?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: face-warehouse
+eureka:
+  client:
+    serviceUrl: #注册中心的 注册地址
+      defaultZone: http://127.0.0.1:8888/eureka/
